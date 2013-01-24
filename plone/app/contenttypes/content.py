@@ -5,7 +5,6 @@ from plone.dexterity.content import Container
 
 from plone.app.contenttypes.interfaces import (
     IDocument,
-    IEvent,
     IFile,
     IFolder,
     IImage,
@@ -16,10 +15,6 @@ from plone.app.contenttypes.interfaces import (
 
 class Document(Item):
     implements(IDocument)
-
-
-class Event(Item):
-    implements(IEvent)
 
 
 class File(Item):

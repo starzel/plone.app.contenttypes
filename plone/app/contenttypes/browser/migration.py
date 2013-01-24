@@ -4,7 +4,6 @@ from Products.Five.browser import BrowserView
 from Products.CMFCore.utils import getToolByName
 from plone.app.contenttypes.content import (
     Document,
-    Event,
     File,
     Folder,
     Image,
@@ -22,7 +21,6 @@ class FixBaseClasses(BrowserView):
         catalog = getToolByName(self.context, "portal_catalog")
         portal_types = [
             ('Document', Document),
-            ('Event', Event),
             ('File', File),
             ('Folder', Folder),
             ('Image', Image),
