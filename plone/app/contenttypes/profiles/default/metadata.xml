@@ -3,5 +3,7 @@
  <dependencies>
   <dependency>profile-plone.app.dexterity:default</dependency>
   <dependency>profile-plone.app.collection:default</dependency>
+  <dependency>profile-plone.app.event.ploneintegration:default</dependency>
+  <dependency>profile-plone.app.event.dx:default</dependency>
  </dependencies>
 </metadata>
