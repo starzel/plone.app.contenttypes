@@ -22,7 +22,6 @@ class PloneAppContenttypesSetupTest(unittest.TestCase):
     def test_atcontenttypes_replaced_by_dexterity_types(self):
         self.assertEqual(self.types['Collection'].meta_type, 'Dexterity FTI')
         self.assertEqual(self.types['Document'].meta_type, 'Dexterity FTI')
-        self.assertEqual(self.types['Event'].meta_type, 'Dexterity FTI')
         self.assertEqual(self.types['File'].meta_type, 'Dexterity FTI')
         self.assertEqual(self.types['Folder'].meta_type, 'Dexterity FTI')
         self.assertEqual(self.types['Image'].meta_type, 'Dexterity FTI')
