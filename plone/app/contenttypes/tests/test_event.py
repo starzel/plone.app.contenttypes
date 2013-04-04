@@ -83,50 +83,50 @@ class EventIntegrationTest(unittest.TestCase):
         self.assertTrue('Lorem ipsum' in view())
 
 
-class EventFunctionalTest(unittest.TestCase):
-
-    layer = PLONE_APP_CONTENTTYPES_FUNCTIONAL_TESTING
-
-    def setUp(self):
-        app = self.layer['app']
-        self.portal = self.layer['portal']
-        self.request = self.layer['request']
-        self.portal_url = self.portal.absolute_url()
-        self.browser = Browser(app)
-        self.browser.handleErrors = False
-        self.browser.addHeader(
-            'Authorization',
-            'Basic %s:%s' % (SITE_OWNER_NAME, SITE_OWNER_PASSWORD,)
-        )
-
-    def test_add_event(self):
-        self.browser.open(self.portal_url)
-        self.browser.getLink('Event').click()
-        self.assertTrue('Title' in self.browser.contents)
-        self.assertTrue('Description' in self.browser.contents)
-        self.assertTrue('Text' in self.browser.contents)
-        self.browser.getControl(name='form.widgets.IDublinCore.title')\
-            .value = "My event"
-        self.browser.getControl(name='form.widgets.IDublinCore.description')\
-            .value = "This is my event."
-        self.browser.getControl(name='form.widgets.text')\
-            .value = "Lorem Ipsum"
-        self.browser.getControl(name='form.widgets.start_date-day')\
-            .value = "1"
-        self.browser.getControl(name='form.widgets.start_date-year')\
-            .value = "2013"
-        self.browser.getControl(name='form.widgets.end_date-day')\
-            .value = "12"
-        self.browser.getControl(name='form.widgets.end_date-year')\
-            .value = "2013"
-        self.browser.getControl('Save').click()
-
-        self.assertTrue(self.browser.url.endswith('my-event/view'))
-        self.assertTrue('My event' in self.browser.contents)
-        self.assertTrue('This is my event' in self.browser.contents)
-        self.assertTrue('Lorem Ipsum' in self.browser.contents)
-        self.assertTrue('Jan 01, 2013 12:00 AM' in self.browser.contents)
-        self.assertTrue('Jan 12, 2013 12:00 AM' in self.browser.contents)
+#class EventFunctionalTest(unittest.TestCase):
+#
+#    layer = PLONE_APP_CONTENTTYPES_FUNCTIONAL_TESTING
+#
+#    def setUp(self):
+#        app = self.layer['app']
+#        self.portal = self.layer['portal']
+#        self.request = self.layer['request']
+#        self.portal_url = self.portal.absolute_url()
+#        self.browser = Browser(app)
+#        self.browser.handleErrors = False
+#        self.browser.addHeader(
+#            'Authorization',
+#            'Basic %s:%s' % (SITE_OWNER_NAME, SITE_OWNER_PASSWORD,)
+#        )
+#
+#    def test_add_event(self):
+#        self.browser.open(self.portal_url)
+#        self.browser.getLink('Event').click()
+#        self.assertTrue('Title' in self.browser.contents)
+#        self.assertTrue('Description' in self.browser.contents)
+#        self.assertTrue('Text' in self.browser.contents)
+#        self.browser.getControl(name='form.widgets.IDublinCore.title')\
+#            .value = "My event"
+#        self.browser.getControl(name='form.widgets.IDublinCore.description')\
+#            .value = "This is my event."
+#        self.browser.getControl(name='form.widgets.text')\
+#            .value = "Lorem Ipsum"
+#        self.browser.getControl(name='form.widgets.start_date-day')\
+#            .value = "1"
+#        self.browser.getControl(name='form.widgets.start_date-year')\
+#            .value = "2013"
+#        self.browser.getControl(name='form.widgets.end_date-day')\
+#            .value = "12"
+#        self.browser.getControl(name='form.widgets.end_date-year')\
+#            .value = "2013"
+#        self.browser.getControl('Save').click()
+#
+#        self.assertTrue(self.browser.url.endswith('my-event/view'))
+#        self.assertTrue('My event' in self.browser.contents)
+#        self.assertTrue('This is my event' in self.browser.contents)
+#        self.assertTrue('Lorem Ipsum' in self.browser.contents)
+#        self.assertTrue('Jan 01, 2013 12:00 AM' in self.browser.contents)
+#        self.assertTrue('Jan 12, 2013 12:00 AM' in self.browser.contents)
 
 
 def test_suite():

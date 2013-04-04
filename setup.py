@@ -30,6 +30,7 @@ setup(name='plone.app.contenttypes',
           'plone.app.relationfield',
           'plone.formwidget.querystring',
           'plone.namedfile [blobs]',
+          'plone.app.event [ploneintegration,dexterity]',
       ],
       extras_require={
           'test': [

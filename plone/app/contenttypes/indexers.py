@@ -5,18 +5,8 @@ from plone.indexer.decorator import indexer
 from plone.rfc822.interfaces import IPrimaryFieldInfo
 
 from plone.app.contenttypes.interfaces import (
-    IEvent, IDocument, INewsItem, ILink, IImage, IFile
+    IDocument, INewsItem, ILink, IImage, IFile
 )
-
-
-@indexer(IEvent)
-def start_date(obj):
-    return DateTime(IEvent(obj).start_date)
-
-
-@indexer(IEvent)
-def end_date(obj):
-    return DateTime(IEvent(obj).end_date)
 
 
 def SearchableText(obj, text=False):

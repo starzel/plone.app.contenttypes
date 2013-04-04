@@ -69,13 +69,6 @@ class IDocument(Interface):
     """
 
 
-class IEvent(Interface):
-    """
-    """
-    start_date = Attribute('A start date.')
-    end_date = Attribute('An end date.')
-
-
 class IFile(Interface):
     """
     """

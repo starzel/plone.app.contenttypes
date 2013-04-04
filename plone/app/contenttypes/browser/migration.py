@@ -26,7 +26,6 @@ from zope.component import getGlobalSiteManager
 
 from plone.app.contenttypes.content import (
     Document,
-    Event,
     File,
     Folder,
     Image,
@@ -50,7 +49,6 @@ class FixBaseClasses(BrowserView):
         out = ""
         portal_types = [
             ('Document', Document),
-            ('Event', Event),
             ('File', File),
             ('Folder', Folder),
             ('Image', Image),

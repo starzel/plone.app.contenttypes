@@ -103,16 +103,6 @@
     />
 
   <browser:page
-    name="event_view"
-    for="plone.app.contenttypes.interfaces.IEvent"
-    layer="plone.app.contenttypes.interfaces.IPloneAppContenttypesLayer"
-    template="templates/event.pt"
-    permission="zope2.View"
-    menu="plone_displayviews"
-    title="View Event"
-    />
-
-  <browser:page
     name="file_view"
     for="plone.app.contenttypes.interfaces.IFile"
     layer="plone.app.contenttypes.interfaces.IPloneAppContenttypesLayer"
